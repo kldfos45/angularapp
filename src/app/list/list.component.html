@@ -1,0 +1,25 @@
+<div class="container">
+
+    <button #taskLink routerLink="/detail">Ajouter une tâche</button>
+    <button on-click="json()">Afficher JSON</button>
+
+    <ul>
+        <li class="task " *ngFor="let task of tasks" on-click="update(task)">
+            <span>{{task.id}} {{task.content}}</span>
+            <span on-click="deleteTask(task)"> X </span>
+        </li>
+    </ul>
+</div>
+
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="State" aria-label="State" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let task of tasks" [value]="task.content">
+            <span> {{task.content}}</span>
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food" value="Sushi">
+</mat-form-field>

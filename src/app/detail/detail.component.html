@@ -1,0 +1,12 @@
+<div class="container">
+  <h3>Détail</h3>
+  <a routerLink="/list">Retour liste</a>
+  <div>
+    <input type="text" [(ngModel)]="content" on-keypress="press($event)" placeholder="content">
+    <input type="checkbox" [(ngModel)]="done">
+  </div>
+  <div class="hello">
+    fsjdkljfsdsfsdfsdf fsdf sd
+  </div>
+  <button on-click="addTask()">Save</button>
+</div>
